@@ -9,11 +9,12 @@ int main()
 
     string symptoms[MAXELEMENTS] = {"Altered mental sensorium", "Abdominal cramp/pain", "Anorexia", "Bleeding gums", "Body weakness", "Blurring of vision", "Chest pain/discomfort", "Constipation", "Cough", "Diarrhea", "Dizziness", "Dysphagia", "Dyspnea", "Dysuria", "Epistaxis", "Fever", "Frequency of urination", "Headache", "Hematemesis", "Hematuria", "Hemotysis", "Irritability", "Jaundice", "Lower extremity edema", "Myalgia", "Orthopnea", "Pain(site)", "Palpitations", "Seizures", "Skin rashes", "Stool,bloody/black tarry/mucoid", "Sweating", "Urgency", "Vomiting", "Weight loss", "Others"};
     bool chosen[MAXELEMENTS] = {false};
-    int ctr, i, accummulator;
+    int ctr, i, accummulator, watcher;
     bool examining;
 
     ctr = 1;
     accummulator = 1;
+    watcher = 29;
     i = 0;
     examining = true;
 
@@ -21,28 +22,31 @@ int main()
     {
         if(chosen[i])
         {
-            cout<<"[/] "<<symptoms[i]<<"    ";
+            cout<<"[/] "<<symptoms[i]<<"\t\t";
         }
             else
             {
-                cout<<"["<<ctr<<"] "<<symptoms[i]<<"    ";
+                cout<<"["<<ctr<<"] "<<symptoms[i]<<"\t\t";
             }
 
         ctr += 9;
-        i++;
+        i += 9;
 
-        if (ctr == 36)
-        {
-            break;
-        }
-
-        if (ctr >= 28 && ctr <= 36)
+        if (ctr >= watcher)
         {
             cout<<endl;
 
             ctr = 1;
+            i = 0;
             ctr += accummulator;
+            i += accummulator;
             accummulator++;
+            watcher++;
+        }
+
+        if (watcher == 38)
+        {
+            break;
         }
     }
 
