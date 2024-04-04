@@ -62,18 +62,25 @@ int main()
 
         choice--;
 
-        if (choice >= 0 && chosen[choice])
+        if (choice == 26)
         {
-            chosen[choice] = false;
+            cout<<"Enter site of pain: ";
+            cin>>skinRash;
         }
-            else if (choice >= 0)
+            else if (choice == 35)
             {
-                chosen[choice] = true;
+                cout<<"Enter other symptoms: ";
+                cin>>otherSymptoms;
             }
-                else
-                {
-                    examining = false;
-                }
+
+        if (choice >= 0)
+        {
+            chosen[choice] = true;
+        }
+            else
+            {
+                examining = false;
+            }
     }
 
     return EXIT_SUCCESS;
