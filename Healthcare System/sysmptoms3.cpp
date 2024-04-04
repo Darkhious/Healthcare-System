@@ -7,7 +7,11 @@ int main()
 {
     const int MAXELEMENTS = 36;
 
-    string symptoms[MAXELEMENTS] = {"Altered mental sensorium", "Abdominal cramp/pain", "Anorexia               ", "Bleeding gums           ", "Body weakness           ", "Blurring of vision      ", "Chest pain/discomfort", "Constipation           ", "Cough               ", "Diarrhea                ", "Dizziness               ", "Dysphagia               ", "Dyspnea               ", "Dysuria               ", "Epistaxis               ", "Fever               ", "Frequency of urination", "Headache               ", "Hematemesis        ", "Hematuria           ", "Hemotysis           ", "Irritability        ", "Jaundice            ", "Lower extremity edema", "Myalgia            ", "Orthopnea           ", "Pain(site)          ", "Palpitations", "Seizures", "Skin rashes", "Stool,bloody/black tarry/mucoid", "Sweating", "Urgency", "Vomiting", "Weight loss", "Others"};
+    string symptoms[MAXELEMENTS] = {"Altered mental sensorium", "Abdominal cramp/pain", "Anorexia               ", "Bleeding gums           ", "Body weakness           ",
+     "Blurring of vision      ", "Chest pain/discomfort", "Constipation           ", "Cough               ", "Diarrhea                ", "Dizziness               ", "Dysphagia               ",
+      "Dyspnea               ", "Dysuria               ", "Epistaxis               ", "Fever               ", "Frequency of urination", "Headache               ", "Hematemesis              ",
+       "Hematuria           ", "Hemotysis           ", "Irritability        ", "Jaundice            ", "Lower extremity edema", "Myalgia                  ", "Orthopnea           ",
+        "Pain(site)          ", "Palpitations", "Seizures", "Skin rashes", "Stool,bloody/black tarry/mucoid", "Sweating", "Urgency", "Vomiting", "Weight loss", "Others"};
     bool chosen[MAXELEMENTS] = {false};
     int ctr, i, accummulator, watcher, choice;
     bool examining;
