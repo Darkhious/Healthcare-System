@@ -34,3 +34,6 @@ string logIn()
 
     return username;
 }
+
+//ofstream file("Hellow.txt", ios::app);
+//file << output << endl;
