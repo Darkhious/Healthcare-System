@@ -1,0 +1,36 @@
+string logIn()
+{
+    string username, password, filename;
+
+    found = false;
+
+    do
+    {
+        clearScreen();
+        cout << "LOGIN\n\n";
+
+        cout << "Username: ";
+        getline(cin, username);
+
+        filename = username + ".txt";
+
+        ifstream account(filename);
+
+        if (account.is_open())
+        {
+            getline(account, password);
+
+            cout << "Password: ";
+            getline(cin, userInput);
+
+            if (userInput == password)
+            {
+                found = true;
+
+                account.close();
+            }
+        }
+    } while (!found);
+
+    return username;
+}
