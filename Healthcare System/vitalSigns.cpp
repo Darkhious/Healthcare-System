@@ -3,35 +3,31 @@
 
 using namespace std;
 
+int i, j;
+
 int main()
 {
-    const int LIM = 100;
-    int hr [LIM], rr [LIM], temp [LIM], weight[LIM], height[LIM];
-    string bp [LIM], others;
-    int acc;
+    const int MAX_ELEMENT = 100;
+    const int VITAL_FIELDS = 6;
 
-    cout<<"Enter account number: ";
-    cin>>acc;
+    string vitalSigns[VITAL_FIELDS][MAX_ELEMENT] =
+    {
+        {""}, // BLOOD PRESSURE - 0
+        {""}, // HEART RATE - 1
+        {""}, // RESPIRATORY RATE - 2
+        {""}, // TEMPERATURE - 3
+        {""}, // WEIGHT - 4
+        {""}  // HEIGHT - 5
+    };
+    string description[VITAL_FIELDS] = {"Blood Pressure (##/##): ", "Heart Rate (## BPM):", "Respiratory Rate (## BPM)", "Temperature (##C): ", "Weight (Kg): ", "Height (##m): "};
 
-    cout<<"Enter bp: ";
-    cin>>bp[acc];
-    cout<<"Enter hr: ";
-    cin>>hr[acc];
-    cout<<"Enter rr: ";
-    cin>>rr[acc];
-    cout<<"Enter temperature: ";
-    cin>>temp[acc];
-    cout<<"Enter weight: ";
-    cin>>weight[acc];
-    cout<<"Enter height: ";
-    cin>>height[acc];
+    j = 0;
 
-    cout<<endl<<bp[acc]<<endl;
-    cout<<hr[acc]<<endl;
-    cout<<rr[acc]<<endl;
-    cout<<temp[acc]<<endl;
-    cout<<weight[acc]<<endl;
-    cout<<height[acc]<<endl<<endl;
+    for (i = 0; i < VITAL_FIELDS; i++)
+    {
+        cout<<"Enter "<<description[i];
+        getline(cin, vitalSigns[i][j]);
+    }
 
     return EXIT_SUCCESS;
 }
