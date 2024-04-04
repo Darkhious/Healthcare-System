@@ -62,14 +62,18 @@ int main()
 
         choice--;
 
-        if (choice >= 0)
+        if (choice >= 0 && chosen[choice])
         {
-            chosen[choice] = true;
+            chosen[choice] = false;
         }
-            else
+            else if (choice >= 0)
             {
-                examining = false;
+                chosen[choice] = true;
             }
+                else
+                {
+                    examining = false;
+                }
     }
 
     return EXIT_SUCCESS;
