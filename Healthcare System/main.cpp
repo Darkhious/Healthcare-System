@@ -1,6 +1,5 @@
 #include <iostream>
 #include <cstdlib>
-#include <fstream>
 
 using namespace std;
 
@@ -19,6 +18,7 @@ bool checkInput(string toCheck)
 {
     char symbol;
 
+    found = false;
     for(i = 0; i < toCheck.length(); i++)
     {
         symbol = toCheck[i]; // Transfers each letter of the text
