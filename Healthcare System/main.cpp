@@ -36,14 +36,14 @@ bool checkInput(string toCheck)
             return true;
 }
 
-void showClinic()
+string showClinic()
 {
     const int CLINIC_NUMBER = 10; // We avoid magic numbers
 
     // This is an array to display all the clinics
     string clinics[CLINIC_NUMBER] =
     {"Chemotherapy", "Family Medicine", "Obstetrics", "General Pediatrics", "Anesthesia Pre-Operative Evaluation & Pain Management", "General Surgery", "General Opthalmology", "Orthopedics", "General ORL-HNS", "General IM"};
-    int ctr;
+    int ctr, id;
 
     examining = true;
     do
@@ -65,7 +65,12 @@ void showClinic()
 
         if (!userInput.empty())
             examining = !checkInput(userInput);
+            if (examining)
+                id = stoi(userInput) - 1;
     }while (examining);
+
+    if (!examining)
+        return clinics[id];
 }
 
 int main()
