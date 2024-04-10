@@ -1,36 +1,76 @@
 #include <iostream>
 #include <cstdlib>
+#include <fstream>
 
 using namespace std;
 
-void clearScreen()
+const string COMPANY_NAME = "CONSULTATION SYSTEM\n";
+
+string userInput; // Holds the user input for the whole program
+int i; // Will be used by generic loops
+bool found, examining; // Will be used to determine whether something is found or not, and when examining or not.
+
+void clear()
 {
-    system("cls");
+    system("cls"); // This will clear the terminal's display
 }
 
-void waitForUser()
+bool checkInput(string toCheck)
 {
-    string wait;
+    char symbol;
 
-    cout<<"Enter anything to continue: ";
-    getline(cin, wait);
+    for(i = 0; i < toCheck.length(); i++)
+    {
+        symbol = toCheck[i]; // Transfers each letter of the text
+
+        // Checks if the symbol is within the range
+        if (symbol >= '0' && symbol <= '9')
+            continue;
+            else
+                found = true;
+    }
+
+    if (found)
+        return false;
+        else
+            return true;
 }
 
-string account()
+void showClinic()
 {
-    string username, password;
+    const int CLINIC_NUMBER = 10; // We avoid magic numbers
 
-    cout<<"MAMU HEALTHCARE CENTER - LOGIN\n\n\n";
+    // This is an array to display all the clinics
+    string clinics[CLINIC_NUMBER] =
+    {"Chemotherapy", "Family Medicine", "Obstetrics", "General Pediatrics", "Anesthesia Pre-Operative Evaluation & Pain Management", "General Surgery", "General Opthalmology", "Orthopedics", "General ORL-HNS", "General IM"};
+    int ctr;
 
-    cout<<"Username: ";
-    cin>>username;
-    cout<<"Password: ";
-    cin>>password;
+    examining = true;
+    do
+    {
+        clear();
+        cout<<COMPANY_NAME;
+        cout<<"PHASE 1 - CLINICS ---\n\n";
+
+        ctr = 1;
+        for(i = 0; i < CLINIC_NUMBER; i++)
+        {
+            cout<<ctr<<".) "<<clinics[i]<<endl;
+
+            ctr++;
+        }
+
+        cout<<"\nSelect a clinic (1/2/3/...): ";
+        getline(cin, userInput);
+
+        if (!userInput.empty())
+            examining = !checkInput(userInput);
+    }while (examining);
 }
 
 int main()
 {
-    clearScreen();
+    showClinic();
 
     return EXIT_SUCCESS;
 }
